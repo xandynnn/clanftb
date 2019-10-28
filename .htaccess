@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+RewriteRule ^home?$ index.php [NC,L]
+RewriteRule ^apply?$ apply.php [NC,L]
+RewriteRule ^update?$ update.php [NC,L]
+RewriteRule ^players?$ players.php [NC,L]
+RewriteRule ^about?$ about.php [NC,L]
+RewriteRule ^admin/register?$ register.php [NC,L]
+RewriteRule ^admin/approval?$ approval.php [NC,L]
+RewriteRule ^admin?$ admin.php [NC,L]
+RewriteRule ^cup?$ cup.php [NC,L]
+RewriteRule ^rules?$ rules.php [NC,L]
+RewriteRule ^player/(.*)$ player.php?username=$1
+
+# RewriteRule comando de reescrita da regra
+# ^pagename/?$ e a espressao regular para validar a url
+# /pagepane.php e o arquivo no servidor
+# [nc,l] são as flags
+
+Header set Access-Control-Allow-Origin "*"
